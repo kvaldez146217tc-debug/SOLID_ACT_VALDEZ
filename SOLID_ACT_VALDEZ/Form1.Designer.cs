@@ -60,6 +60,7 @@
             dgvItems.RowHeadersWidth = 62;
             dgvItems.Size = new Size(513, 175);
             dgvItems.TabIndex = 1;
+            dgvItems.CellContentClick += dgvItems_CellContentClick;
             // 
             // Product
             // 
@@ -163,6 +164,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(824, 556);
             Controls.Add(lblTotal);
             Controls.Add(label1);

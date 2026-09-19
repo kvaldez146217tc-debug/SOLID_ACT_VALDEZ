@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SOLID_ACT_VALDEZ
+namespace SOLID_ACT_VALDEZ.Discount
 {
-   
+
     public class DiscountStrategyRegistry
     {
-        private readonly List<IDiscountStrategy> strategies;
+        private readonly Dictionary<string, IDiscountStrategy> strategies;
 
         public DiscountStrategyRegistry(IEnumerable<IDiscountStrategy> strategies)
         {
-            this.strategies = strategies.ToList();
+            this.strategies = strategies.ToDictionary(s => s.Name);
         }
 
-        public IDiscountStrategy GetByName(string name)
+        public IDiscountStrategy GetStrategy(string discountType)
         {
-            var match = strategies.FirstOrDefault(s => s.Name == name);
-            return match ?? new NoDiscountStrategy();
+            return strategies.TryGetValue(discountType, out var strategy)
+                ? strategy
+                : strategies["None"];
         }
     }
 }

@@ -11,7 +11,7 @@ namespace SOLID_ACT_VALDEZ.Services
     {
         public void Print(Order order)
         {
-            MessageBox.Show($"Invoice for {order.CustomerEmail}: {order.Total:C}");
+            MessageBox.Show($"Invoice for {order.CustomerEmail} : {order.Total:C}");
         }
     }
 }

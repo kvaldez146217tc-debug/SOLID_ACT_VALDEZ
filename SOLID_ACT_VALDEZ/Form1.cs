@@ -1,12 +1,14 @@
-using SOLID_ACT_VALDEZ.Models;
-using SOLID_ACT_VALDEZ.Service;
-using SOLID_ACT_VALDEZ.Services;
-using System.Drawing.Printing;
-using System.Net;
-using System.Net.Mail;
+    using System;
+    using System.Windows.Forms;
+    using SOLID_ACT_VALDEZ.Models;
+    using SOLID_ACT_VALDEZ.Service;
+    using SOLID_ACT_VALDEZ.Services;
+    using System.Drawing.Printing;
+    using System.Net;
+    using System.Net.Mail;
 
-namespace SOLID_ACT_VALDEZ
-{
+    namespace SOLID_ACT_VALDEZ
+    {
     public partial class Form1 : Form
     {
         private IOrderCalculator orderCalculator;
@@ -67,7 +69,7 @@ namespace SOLID_ACT_VALDEZ
         {
             var order = new Order { CustomerEmail = txtCustomerEmail.Text, Total = currentTotal };
             orderRepository.Save(order);
-            MessageBox.Show("Saved!");
+            MessageBox.Show("  Order Saved! ");
         }
 
         private void btnEmailInvoice_Click(object sender, EventArgs e)
@@ -80,9 +82,15 @@ namespace SOLID_ACT_VALDEZ
         {
             var order = new Order { CustomerEmail = txtCustomerEmail.Text, Total = currentTotal };
             invoicePrinter.Print(order);
+            
         }
 
         private void txtCustomerEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

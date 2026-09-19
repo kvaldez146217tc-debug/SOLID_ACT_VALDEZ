@@ -10,6 +10,6 @@ namespace SOLID_ACT_VALDEZ.Discount
     {
         public string Name => "Student";
 
-        public decimal Apply(decimal subtotal) => subtotal * 0.9m;
+        public decimal Apply(decimal total) => total * 0.9m;
     }
 }

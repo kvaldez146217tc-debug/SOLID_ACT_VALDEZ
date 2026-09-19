@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SOLID_ACT_VALDEZ
 {
@@ -31,11 +32,14 @@ namespace SOLID_ACT_VALDEZ
 
             
             IOrderRepository orderRepository =
-                new SqlOrderRepository("Server=localhost;Database=Orders;...");
+                new SqlOrderRepository(@"Server=(localdb)\mssqllocaldb;Database=Orders;Trusted_Connection=True;");
 
-            IInvoiceSender invoiceSender =
-                new SmtpInvoiceSender("smtp.gmail.com", "store@shop.com");
-
+            IInvoiceSender invoiceSender = new SmtpInvoiceSender("smtp.gmail.com", 
+                587, 
+                "kryztelkatevldz@gmail.com",
+                "kryztelkatevldz@gmail.com",
+                "meea lvun qbbn pejj");
+    
             IInvoicePrinter invoicePrinter = new MessageBoxInvoicePrinter();
 
             var form = new Form1();

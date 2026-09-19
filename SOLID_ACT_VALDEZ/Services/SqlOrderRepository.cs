@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using SOLID_ACT_VALDEZ.Models;
+using SOLID_ACT_VALDEZ.Service;
 
 namespace SOLID_ACT_VALDEZ.Services
 {

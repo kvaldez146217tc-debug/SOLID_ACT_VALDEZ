@@ -9,6 +9,6 @@ namespace SOLID_ACT_VALDEZ.Services
 {
     public interface IOrderCalculator
     {
-        decimal CalculateTotal(Order order, string discountName);
+        decimal CalculateTotal(Order order, string discountType);
     }
 }
