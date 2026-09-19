@@ -1,4 +1,4 @@
-Refactoring Notes — SOLID Principles
+_Refactoring Notes — SOLID Principles_
 
 The original Form1.cs handled everything: calculations, discounts, database access, email, and UI. The code was refactored to follow the SOLID principles.
 
